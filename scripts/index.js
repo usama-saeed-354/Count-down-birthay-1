@@ -2,10 +2,11 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
+let popup = document.getElementById('popup');
 
 const config = {
-  birthdate: 'Jan 29, 2020',
-  name: 'Darlene'
+  birthdate: 'may 2, 2024',
+  name: 'Baby Stewie! :*'
 };
 
 function hideEverything() {
@@ -27,7 +28,7 @@ const second = 1000,
   day = hour * 24;
 
 let countDown = new Date(`${config.birthdate} 00:00:00`).getTime();
-x = setInterval(function() {
+x = setInterval(function () {
   let now = new Date().getTime(),
     distance = countDown - now;
 
@@ -118,7 +119,7 @@ x = setInterval(function() {
 
     this.reset();
   }
-  Letter.prototype.reset = function() {
+  Letter.prototype.reset = function () {
     this.phase = 'firework';
     this.tick = 0;
     this.spawned = false;
@@ -131,7 +132,7 @@ x = setInterval(function() {
       opts.fireworkBaseLineWidth + opts.fireworkAddedLineWidth * Math.random();
     this.prevPoints = [[0, hh, 0]];
   };
-  Letter.prototype.step = function() {
+  Letter.prototype.step = function () {
     if (this.phase === 'firework') {
       if (!this.spawned) {
         ++this.tick;
@@ -364,7 +365,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
-  Shard.prototype.step = function() {
+  Shard.prototype.step = function () {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
 
@@ -438,7 +439,7 @@ x = setInterval(function() {
     }
   }
 
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
 
@@ -499,3 +500,12 @@ x = setInterval(function() {
   //     console.log("happy birthday");
   // }
 }, second);
+
+function openPopup() {
+  function openPopup() {
+    popup.classList.add('open-popup');
+  }
+  function closePopup() {
+    popup.classList.remove('open-popup');
+  }
+}
