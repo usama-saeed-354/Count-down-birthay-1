@@ -2,10 +2,12 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
+let birthdayCard = document.getElementById('birthdayCard');
+const openBtn = document.getElementById('openBtn');
 
 const config = {
-  birthdate: 'Jan 29, 2020',
-  name: 'Darlene'
+  birthdate: 'may 28, 2024',
+  name: ' Baby Stewie! :)'
 };
 
 function hideEverything() {
@@ -27,7 +29,7 @@ const second = 1000,
   day = hour * 24;
 
 let countDown = new Date(`${config.birthdate} 00:00:00`).getTime();
-x = setInterval(function() {
+x = setInterval(function () {
   let now = new Date().getTime(),
     distance = countDown - now;
 
@@ -118,7 +120,7 @@ x = setInterval(function() {
 
     this.reset();
   }
-  Letter.prototype.reset = function() {
+  Letter.prototype.reset = function () {
     this.phase = 'firework';
     this.tick = 0;
     this.spawned = false;
@@ -131,7 +133,7 @@ x = setInterval(function() {
       opts.fireworkBaseLineWidth + opts.fireworkAddedLineWidth * Math.random();
     this.prevPoints = [[0, hh, 0]];
   };
-  Letter.prototype.step = function() {
+  Letter.prototype.step = function () {
     if (this.phase === 'firework') {
       if (!this.spawned) {
         ++this.tick;
@@ -364,7 +366,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
-  Shard.prototype.step = function() {
+  Shard.prototype.step = function () {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
 
@@ -438,7 +440,7 @@ x = setInterval(function() {
     }
   }
 
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
 
@@ -476,9 +478,9 @@ x = setInterval(function() {
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);
-      if (step === 3) {
+      if (step === 1) {
       }
-      if (step === 4) {
+      if (step === 2) {
         return;
       }
       setTimeout(openBox, stepMinutes[step - 1]);
@@ -488,7 +490,7 @@ x = setInterval(function() {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      setTimeout(anim, 1500);
+      setTimeout(anim, 1900);
     }
 
     init();
@@ -499,3 +501,13 @@ x = setInterval(function() {
   //     console.log("happy birthday");
   // }
 }, second);
+
+function openCard() {
+  birthdayCard.classList.add('open-card');
+}
+
+openBtn.addEventListener('click', () => {
+  openBtn.style.display = 'none';
+
+  birthdayCard.style.display = 'block';
+});
