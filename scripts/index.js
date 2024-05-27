@@ -2,11 +2,12 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
-let popup = document.getElementById('popup');
+let birthdayCard = document.getElementById('birthdayCard');
+const openBtn = document.getElementById('openBtn');
 
 const config = {
-  birthdate: 'may 2, 2024',
-  name: 'Baby Stewie! :*'
+  birthdate: 'may 28, 2024',
+  name: ' Baby Stewie! :)'
 };
 
 function hideEverything() {
@@ -477,9 +478,9 @@ x = setInterval(function () {
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);
-      if (step === 3) {
+      if (step === 1) {
       }
-      if (step === 4) {
+      if (step === 2) {
         return;
       }
       setTimeout(openBox, stepMinutes[step - 1]);
@@ -489,7 +490,7 @@ x = setInterval(function () {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      setTimeout(anim, 1500);
+      setTimeout(anim, 1900);
     }
 
     init();
@@ -501,11 +502,12 @@ x = setInterval(function () {
   // }
 }, second);
 
-function openPopup() {
-  function openPopup() {
-    popup.classList.add('open-popup');
-  }
-  function closePopup() {
-    popup.classList.remove('open-popup');
-  }
+function openCard() {
+  birthdayCard.classList.add('open-card');
 }
+
+openBtn.addEventListener('click', () => {
+  openBtn.style.display = 'none';
+
+  birthdayCard.style.display = 'block';
+});

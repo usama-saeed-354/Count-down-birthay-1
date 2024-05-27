@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Surprise</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Happy Birthday!</title>
+    <link
+      rel="stylesheet"
+      href="styles/flexbox-center-container.css"
+      media="all"
+    />
+    <link rel="stylesheet" href="styles/system-fonts.css" media="all" />
+    <link rel="stylesheet" href="styles/style.css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
-  <link rel="stylesheet" href="styles/system-fonts.css" media="all">
-  <link rel="stylesheet" href="styles/style.css" media="all">
-</head>
-
-<body>
-  <canvas id=c></canvas>
-  <canvas id="confetti"></canvas>
-  <div class="container" id="count">
-    <h1 id="head">Countdown to your birthday:</h1>
-    <ul>
-      <li><span id="day"></span>days</li>
-      <li><span id="hour"></span>hours</li>
-      <li><span id="minute"></span>minutes</li>
-      <li><span id="second"></span>seconds</li>
-    </ul>
-  </div>
-  <div id="merrywrap" class="merrywrap">
-    <canvas id="snowfall"></canvas>
-    <div class="giftbox">
-      <div class="cover">
-        <div></div>
-      </div>
-      
-      <div class="box"></div>
+  <body>
+    <canvas id="c"></canvas>
+    <canvas id="confetti"></canvas>
+    <div class="container" id="count">
+      <h1 id="head">Guess the Countdown for :)</h1>
+      <ul>
+        <li><span id="day"></span>days</li>
+        <li><span id="hour"></span>hours</li>
+        <li><span id="minute"></span>minutes</li>
+        <li><span id="second"></span>seconds</li>
+      </ul>
     </div>
-      <button type="submit" class="btn" onclick="openPopup()">Click Me</button>
-      <div class="popup" id="popup">
-        <div class="birthdayCard"> 
-          <div class="cardFront">
-            <h3 class="happy">HAPPY BIRTHDAY</h3>
-            <div class="balloons">
-              <div class="balloon-1"></div>
-              <div class="balloon-2"></div>
-              <div class="balloon-3"></div>
-              <div class="balloon-4"></div>
-            </div>
-          </div>
-          <div class="cardInside">
-            <h3 class="back">HAPPY BIRTHDAY</h3>
-            <p>Dear Friend,</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-              expedita debitis esse quaerat adipisci iste illum placeat incidunt
-              reprehenderit laudantium!
-            </p>
-            <p class="name">xxx</p>
-          </div>
-          <button type="button" onclick="closePopup()">Close</button>
+    <div id="merrywrap" class="merrywrap">
+      <canvas id="snowfall"></canvas>
+      <div class="giftbox">
+        <div class="cover">
+          <div></div>
         </div>
-    </div>
-</body>
-<script src="scripts/confetti.min.js" charset="utf-8"></script>
-<script src="scripts/index.js" charset="utf-8"></script>
+        <div class="box"></div>
+        <button type="button" id="openBtn" onclick="openCard()">Open</button>
+      </div>
+      >        <div class="birthdayCard" id="birthdayCard">
+        <div class="cardFront">
+          <h3 class="happy">HAPPY BIRTHDAY</h3>
+          <div class="balloons">
+            <div class="balloon-1"></div>
+            <div class="balloon-2"></div>
+            <div class="balloon-3"></div>
+            <div class="balloon-4"></div>
+          </div>
+        </div>
+        <div class="cardInside">
+          <h3 class="back">HAPPY BIRTHDAY</h3>
+          <p>Dear Baby,</p>
+          <p>
+           Wishing you a birthday as bright as your smile. Enjoy your day to the fullest. :) 
+          </p>
+          <p class="name">I miss you.</p>
+          <div id="cont">
+            <div class="cake">
+              <div class="middle"></div>
+              <div class="chocs"></div>
+              <div class="top"></div>
+            </div>
+            <div class="candles">
+              <div class="flame"></div>
+              <div class="flame2"></div>
+              <div class="flame3"></div>
+              <div class="shadows"></div>
+            </div>
+            <p6 class="text"> Click on the flames to blow candles! :D</p6>
+          </div>
+        </div>
+      </div>
+      <div class="heart"></div>
+      <div class="heart-Two"></div>
 
+  </body>
+  <script src="scripts/confetti.min.js" charset="utf-8"></script>
+  <script src="scripts/index.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(function() {
+        $(".candles").click(function() {
+            
+          $(".flame").animate({"opacity": 0}, "fast");
+          $(".flame2").animate({"opacity": 0}, "fast");
+          $(".flame3").animate({"opacity": 0}, "fast");
+        });
+    });
+    </script>
 </html>
