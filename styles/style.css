@@ -154,6 +154,15 @@ li span {
 .step-2 .giftbox .box {
   animation: flyDown 2s ease-in 0.05s forwards;
 }
+@font-face {
+    font-family: 'SF Compact Text Regular';
+    src: url('../fonts/SF-Compact-Text-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#countdown {
+    font-family: 'SF Compact Text Regular', sans-serif;
+}
 @keyframes wobble {
   25% {
       transform: rotate(4deg);
